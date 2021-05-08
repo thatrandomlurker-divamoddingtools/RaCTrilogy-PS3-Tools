@@ -15,5 +15,9 @@ Usage: Open the script in blender, make sure all submeshes have been selected in
 
 Set the path to the .grp file for the armor file in the script, make sure the object is selected, and run it. it should import all bone weights to all vertices
 
+Known working in blender 2.79, not sure about newer versions
+
 # GroupNames.py
 Usage: Open the script in blender, and with a mesh selected, run it. it should change all known group names in the selected object to a more descriptive name (e.g. group 72 becomes the L_Shoulder group)
+
+Known working in blender 2.79, not sure about newer versions
