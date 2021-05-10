@@ -14,6 +14,11 @@ texDataSizes = []
 curmesh = 0
 
 with open(file, 'rb') as ps3:
+    SepDec = input("Seperate Meshes? (Y for Yes, N for No.)\n")
+    if SepDec.lower() == 'y':
+        SeperateMeshes = True
+    else:
+        SeperateMeshes = False
     # Where info about the armor model is located
     MeshInfoOffset = struct.unpack('>I', ps3.read(4))[0]
     # Where the vram data is located
@@ -134,7 +139,8 @@ with open(file, 'rb') as ps3:
             o.write(f"vt {v['U'][0]} {v['U'][1] * -1}\n")
         ps3.seek(FaceOffset)
         for s in SubmeshInfo:
-            o.write(f"o mesh_{curmesh}\n")
+            if SeperateMeshes:
+                o.write(f"o mesh_{curmesh}\n")
             o.write(f"usemtl tex{s['TextureIndex']}\n")
             for i in range(int(s["Faces"] // 3)):
                 FaceSet = struct.unpack('>HHH', ps3.read(6))
