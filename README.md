@@ -11,9 +11,9 @@ Supports: Most if not All Armor.ps3 files and Wrench.ps3 files
 Known Issues: Doesn't support dumping bone positions. the reason for this is that the armor.ps3 files seemingly don't have any skeleton info inside them. i'll add a base skeleton to this later.
 
 # WeightImport.py
-Usage: Open the script in blender, make sure all submeshes have been selected in order of last to first (so 4 - 0), then join them into a single mesh, and re-select it.
+Usage: Open the script in blender, make sure all submeshes have been selected in order of last to first (so 4 - 0), then join them into a single mesh, and re-select it. For simpler use, don't enable submesh splitting when dumping with the Armor Ripper script, as you only have to import the grp on the one mesh imported.
 
-Set the path to the .grp file for the armor file in the script, make sure the object is selected, and run it. it should import all bone weights to all vertices
+Run the script and choose the corresponding .grp file generated for the armor file, it should correctly assign bone weights.
 
 Known working in blender 2.79, not sure about newer versions
 
